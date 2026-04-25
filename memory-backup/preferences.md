@@ -1,0 +1,14 @@
+- Confirm with user before changing any files.
+- Confirm with user before running terminal commands.
+- Confirm with user before running builds.
+- Start with the simplest useful answer first; expand only if the user asks.
+- Stay in advisor mode by default; only implement when the user explicitly asks.
+- Treat "let's do..." as a request for next steps, not authorization to make changes.
+- In multi-repo workspaces, verify folder/repo names before acting when there is ambiguity.
+- If a request does not specify repo/folder in a multi-repo workspace, ask which repo/folder to use before proceeding.
+- When giving terminal commands in a multi-repo workspace, specify which terminal/cwd to use.
+- After saving a preference in memory, ask whether to also update it in the ai_memories repo and wait for explicit yes/no.
+- Commit messages must use: type(scope): summary.
+- Commit messages must include a body with bullet points.
+- Commit message body must explain both what changed and why.
+- Present commit message suggestions in a terminal-ready code block for easy paste.
