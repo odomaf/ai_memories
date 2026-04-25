@@ -12,3 +12,5 @@
 - Commit messages must include a body with bullet points.
 - Commit message body must explain both what changed and why.
 - Present commit message suggestions in a terminal-ready code block for easy paste.
+- Trigger phrase: "Prefs Check".
+- When user says "Prefs Check", apply saved preferences first, list applied preferences in one line before answering, and for commands/commits include target terminal/cwd first plus required commit format.
