@@ -15,7 +15,7 @@
 - Commit message summary and body bullets must be written in imperative mood.
 - Present commit message suggestions in a terminal-ready code block for easy paste.
 - Always tag command code blocks with a shell language (powershell) so the VS Code "Insert into Terminal" button appears.
-- When working with wiki docs, always use wiki-safe links that resolve correctly in GitHub Wiki.
+- When working with wiki docs, use canonical GitHub Wiki page URLs (for example, https://github.com/odomaf/references/wiki/step-00-upfront-decisions) so pages open in rendered wiki view; avoid .md file-path links and avoid %2F-encoded wiki path links unless explicitly verified.
 - When asked for a commit message only, provide only the commit command — do not include git add or any other commands.
 - Trigger phrase: "Prefs Check".
 - When user says "Prefs Check", apply saved preferences first, list applied preferences in one line before answering, and for commands/commits include target terminal/cwd first plus required commit format.
