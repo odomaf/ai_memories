@@ -19,3 +19,9 @@
 - When asked for a commit message only, provide only the commit command — do not include git add or any other commands.
 - Trigger phrase: "Prefs Check".
 - When user says "Prefs Check", apply saved preferences first, list applied preferences in one line before answering, and for commands/commits include target terminal/cwd first plus required commit format.
+- When publishing new documentation for the GitHub Wiki, ensure the files are placed in docs/wiki or a subfolder that is included by the publishing script. Files outside this path will not appear in the wiki.
+- When linking to sample or step pages in the wiki, use the dash-joined path as rendered by GitHub (e.g., ops-steps-sample-step-1-server-layout-sample) for all canonical URLs.
+- After moving or renaming documentation files, always update all internal links to match the new canonical wiki page names.
+- When publishing to GitHub Wiki, all .md files (including those from subfolders) appear at the wiki root as pages named only by their filename (e.g., step-1-server-layout-sample), not by their full path.
+- All canonical wiki links must use only the filename portion (e.g., https://github.com/odomaf/references/wiki/step-1-server-layout-sample), regardless of source folder structure.
+- After moving or reorganizing wiki source files, always verify the actual wiki page URLs and update all links to match the rendered wiki.
