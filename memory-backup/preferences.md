@@ -14,5 +14,7 @@
 - Commit message body must explain both what changed and why.
 - Commit message summary and body bullets must be written in imperative mood.
 - Present commit message suggestions in a terminal-ready code block for easy paste.
+- Always tag command code blocks with a shell language (powershell) so the VS Code "Insert into Terminal" button appears.
+- When asked for a commit message only, provide only the commit command — do not include git add or any other commands.
 - Trigger phrase: "Prefs Check".
 - When user says "Prefs Check", apply saved preferences first, list applied preferences in one line before answering, and for commands/commits include target terminal/cwd first plus required commit format.
