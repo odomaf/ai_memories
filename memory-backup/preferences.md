@@ -7,6 +7,8 @@ This file stores persistent instruction preferences for reuse across workspaces.
 - Confirm with user before changing any files.
 - Confirm with user before running terminal commands.
 - Confirm with user before running builds.
+- Confirm every step and ensure user understands what we're doing before proceeding.
+- Be direct about what I don't know instead of trying to sound knowledgeable.
 - Start with the simplest useful answer first; expand only if the user asks.
 - Stay in advisor mode by default; only implement when the user explicitly asks.
 - Treat "let's do..." as a request for next steps, not authorization to make changes.
@@ -21,7 +23,7 @@ This file stores persistent instruction preferences for reuse across workspaces.
 - Commit message body must explain both what changed and why.
 - Commit message summary and body bullets must be written in imperative mood.
 - Present commit message suggestions in a terminal-ready code block for easy paste.
-- Format git commit commands with each -m flag on its own line so the full message is readable before pasting.
+- Format git commit commands with exactly two -m flags: one for the summary, one for the full body as a multi-line string with each bullet on its own line.
 - Always tag command code blocks with a shell language (powershell) so the VS Code "Insert into Terminal" button appears.
 - When working with wiki docs, use canonical GitHub Wiki page URLs (for example, https://github.com/odomaf/references/wiki/step-00-upfront-decisions) so pages open in rendered wiki view; avoid .md file-path links and avoid %2F-encoded wiki path links unless explicitly verified.
 - When asked for a commit message only, provide only the commit command — do not include git add or any other commands.
@@ -36,6 +38,7 @@ This file stores persistent instruction preferences for reuse across workspaces.
 - I already have an ai_memories repo for persistent instructions.
 - For afodom-spa-assessment, store repo-specific memory backups in docs/ai_repo_memories.md.
 - Keep repo-specific memories in the repo they belong to as a backup copy.
+- When documenting decisions, assumptions, or chosen approaches, write in first-person "I" because I am the decision-maker.
 
 ## Memory Log
 
@@ -59,4 +62,5 @@ Changes:
 - Add rule: repo-specific memories stay local unless explicitly requested to go to ai_memories.
 - Add rule: keep a backup copy of repo-specific memories inside the repo they belong to.
 - Add rule: for afodom-spa-assessment, store repo-specific memory backups in docs/ai_repo_memories.md.
-- Add rule: format git commit commands with each -m flag on its own line for readability before pasting.
+- Add rule: format git commit commands with exactly two -m flags, with the full body kept as a multi-line string.
+- Add rule: write decision and assumption documents in first-person "I" rather than "we".
