@@ -1,3 +1,9 @@
+# Preferences
+
+This file stores persistent instruction preferences for reuse across workspaces.
+
+## Active Rules
+
 - Confirm with user before changing any files.
 - Confirm with user before running terminal commands.
 - Confirm with user before running builds.
@@ -8,12 +14,14 @@
 - If a request does not specify repo/folder in a multi-repo workspace, ask which repo/folder to use before proceeding.
 - When giving terminal commands in a multi-repo workspace, specify which terminal/cwd to use.
 - For any command or commit response, include Terminal + Cwd + a terminal-ready code block; if any part is missing, reject the command response and ask for the missing detail.
-- After saving a preference in memory, ask whether to also update it in the ai_memories repo and wait for explicit yes/no.
+- When saving memories, ask which repo the memory should go into.
+- If a memory is repo-specific, do not copy it to ai_memories unless explicitly requested.
 - Commit messages must use: type(scope): summary.
 - Commit messages must include a body with bullet points.
 - Commit message body must explain both what changed and why.
 - Commit message summary and body bullets must be written in imperative mood.
 - Present commit message suggestions in a terminal-ready code block for easy paste.
+- Format git commit commands with each -m flag on its own line so the full message is readable before pasting.
 - Always tag command code blocks with a shell language (powershell) so the VS Code "Insert into Terminal" button appears.
 - When working with wiki docs, use canonical GitHub Wiki page URLs (for example, https://github.com/odomaf/references/wiki/step-00-upfront-decisions) so pages open in rendered wiki view; avoid .md file-path links and avoid %2F-encoded wiki path links unless explicitly verified.
 - When asked for a commit message only, provide only the commit command — do not include git add or any other commands.
@@ -25,3 +33,30 @@
 - When publishing to GitHub Wiki, all .md files (including those from subfolders) appear at the wiki root as pages named only by their filename (e.g., step-1-server-layout-sample), not by their full path.
 - All canonical wiki links must use only the filename portion (e.g., https://github.com/odomaf/references/wiki/step-1-server-layout-sample), regardless of source folder structure.
 - After moving or reorganizing wiki source files, always verify the actual wiki page URLs and update all links to match the rendered wiki.
+- I already have an ai_memories repo for persistent instructions.
+- For afodom-spa-assessment, store repo-specific memory backups in docs/ai_repo_memories.md.
+- Keep repo-specific memories in the repo they belong to as a backup copy.
+
+## Memory Log
+
+### 2026-05-05
+
+Reason: Add audit-friendly structure for easier preference checks and updates.
+
+Changes:
+
+- Add `Active Rules` section as the current source of truth.
+- Add `Memory Log` section for dated change history.
+- Preserve all existing preference entries without modification.
+
+### 2026-05-05 (in progress)
+
+Reason: Session updates to memory management and commit message formatting preferences.
+
+Changes:
+
+- Replace "ask whether to update ai_memories" rule with "ask which repo memory should go into."
+- Add rule: repo-specific memories stay local unless explicitly requested to go to ai_memories.
+- Add rule: keep a backup copy of repo-specific memories inside the repo they belong to.
+- Add rule: for afodom-spa-assessment, store repo-specific memory backups in docs/ai_repo_memories.md.
+- Add rule: format git commit commands with each -m flag on its own line for readability before pasting.
