@@ -39,11 +39,16 @@ This file stores persistent instruction preferences for reuse across workspaces.
 - For afodom-spa-assessment, store repo-specific memory backups in docs/ai_repo_memories.md.
 - Keep repo-specific memories in the repo they belong to as a backup copy.
 - When documenting decisions, assumptions, or chosen approaches, write in first-person "I" because I am the decision-maker.
+- When reviewing code for an interview/assessment context, evaluate comments and structure from both a junior reader's clarity perspective and a senior reviewer's signal perspective before adding or removing comments.
+- Trigger phrase: "Interview Lens". When user says "Interview Lens", review the current code from both a junior reader's clarity perspective and a senior reviewer's signal perspective, then report findings and recommendations.
 - For modern .NET CLI workflows, `dotnet new sln` may create `.slnx`; always use the actual generated solution filename in commands.
 - On Windows, verify .NET SDK architecture (x64 vs x86); x86 installs may not appear in normal x64 `dotnet` usage.
 - After SDK installs, open a new terminal (or restart VS Code) before rechecking `dotnet --list-sdks`.
 - In planning docs, use completion timestamps in this format: `YYYY-MM-DD HH:MM (UTC±HH:MM)`.
 - Prefer separate files for implementation plan and implementation timeline when both are maintained.
+- Bash is the default for helper scripts and tools (e.g., coverage reports, automation). Use bash unless there's a specific reason to use PowerShell (Windows-only requirement, repo convention, etc.).
+- When running dotnet test in a multi-project solution, always specify the test project path explicitly to avoid MSB1008 "Only one project can be specified" error.
+- Top-level statement programs generate a synthetic Main$ method that shows up in coverage with 0% and a high CRAP score. Exclude it via runsettings Exclude tag with [AssemblyName]Program under XPlat Code Coverage configuration.
 
 ## Memory Log
 
@@ -81,3 +86,13 @@ Changes:
 - Add rule: after SDK installs, open a new terminal before rechecking `dotnet --list-sdks`.
 - Add rule: use `YYYY-MM-DD HH:MM (UTC±HH:MM)` format for completion timestamps in planning docs.
 - Add rule: prefer separate files for implementation plan and implementation timeline.
+
+### 2026-05-06
+
+Reason: Capture lessons learned from coverage tooling and dotnet test usage in multi-project solutions.
+
+Changes:
+
+- Add rule: bash is the default for helper scripts; only use PowerShell when there is a specific reason.
+- Add rule: always specify test project path in dotnet test to avoid MSB1008 in multi-project solutions.
+- Add rule: exclude top-level statement Program from coverage via runsettings to suppress synthetic Main$ CRAP score.
