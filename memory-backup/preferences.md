@@ -69,3 +69,15 @@ Changes:
 - Add rule: for afodom-spa-assessment, store repo-specific memory backups in docs/ai_repo_memories.md.
 - Add rule: format git commit commands with exactly two -m flags, with the full body kept as a multi-line string.
 - Add rule: write decision and assumption documents in first-person "I" rather than "we".
+
+### 2026-05-05 (end of session)
+
+Reason: Capture lessons learned from .NET 10 SDK setup and planning document conventions.
+
+Changes:
+
+- Add rule: `dotnet new sln` may generate `.slnx`; always use the actual generated solution filename.
+- Add rule: on Windows, verify .NET SDK is x64, not x86, before troubleshooting dotnet issues.
+- Add rule: after SDK installs, open a new terminal before rechecking `dotnet --list-sdks`.
+- Add rule: use `YYYY-MM-DD HH:MM (UTC±HH:MM)` format for completion timestamps in planning docs.
+- Add rule: prefer separate files for implementation plan and implementation timeline.
