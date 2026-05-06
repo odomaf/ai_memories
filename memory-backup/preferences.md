@@ -39,6 +39,11 @@ This file stores persistent instruction preferences for reuse across workspaces.
 - For afodom-spa-assessment, store repo-specific memory backups in docs/ai_repo_memories.md.
 - Keep repo-specific memories in the repo they belong to as a backup copy.
 - When documenting decisions, assumptions, or chosen approaches, write in first-person "I" because I am the decision-maker.
+- For modern .NET CLI workflows, `dotnet new sln` may create `.slnx`; always use the actual generated solution filename in commands.
+- On Windows, verify .NET SDK architecture (x64 vs x86); x86 installs may not appear in normal x64 `dotnet` usage.
+- After SDK installs, open a new terminal (or restart VS Code) before rechecking `dotnet --list-sdks`.
+- In planning docs, use completion timestamps in this format: `YYYY-MM-DD HH:MM (UTC±HH:MM)`.
+- Prefer separate files for implementation plan and implementation timeline when both are maintained.
 
 ## Memory Log
 
