@@ -1,3 +1,15 @@
+# Quick Reference (Commands & File Updates)
+
+- Always specify the target terminal and cwd in plain text before any terminal command code block.
+- For any command or commit response, include Terminal + Cwd + a terminal-ready code block; if any part is missing, reject the command response and ask for the missing detail.
+- When giving terminal commands in a multi-repo workspace, specify which terminal/cwd to use.
+- When providing a commit message, use: type(scope): summary, and include a body with bullet points in imperative mood.
+- Format git commit commands with exactly two -m flags: one for the summary, one for the full body as a multi-line string with each bullet on its own line.
+- Always tag command code blocks with a shell language (powershell) so the VS Code "Insert into Terminal" button appears.
+- Do not include comments in console command/code blocks for the user.
+- When saving or updating memories, always ask which repo the memory should go into and confirm before duplicating to ai_memories.
+- If a memory is repo-specific, do not copy it to ai_memories unless explicitly requested.
+
 # Preferences
 
 This file stores persistent instruction preferences for reuse across workspaces.
