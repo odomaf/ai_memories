@@ -2,7 +2,12 @@
 
 This file stores persistent instruction preferences for reuse across workspaces.
 
-## Active Rules
+- When providing any terminal command, always specify the target terminal and cwd in plain text before the code block, even if comments are disabled in the code block itself.
+
+- For workspace files (including repo backups), always use file editing tools (not the memory tool); reserve the memory tool for /memories/ directory only.
+- When adding or updating a global preference, always ask whether to update the ai_memories/memory-backup/preferences.md file to keep the backup in sync.
+
+- Do not include comments in console command/code blocks for the user.
 
 - Confirm with user before changing any files.
 - Confirm with user before running terminal commands.
