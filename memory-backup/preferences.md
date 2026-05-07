@@ -38,7 +38,7 @@ This file stores persistent instruction preferences for reuse across workspaces.
 - I already have an ai_memories repo for persistent instructions.
 - For afodom-spa-assessment, store repo-specific memory backups in docs/ai_repo_memories.md.
 - Keep repo-specific memories in the repo they belong to as a backup copy.
-- When documenting decisions, assumptions, or chosen approaches, write in first-person "I" because I am the decision-maker.
+- When documenting decisions, assumptions, or chosen approaches, use imperative voice.
 - When reviewing code for an interview/assessment context, evaluate comments and structure from both a junior reader's clarity perspective and a senior reviewer's signal perspective before adding or removing comments.
 - Trigger phrase: "Interview Lens". When user says "Interview Lens", review the current code from both a junior reader's clarity perspective and a senior reviewer's signal perspective, then report findings and recommendations.
 - For modern .NET CLI workflows, `dotnet new sln` may create `.slnx`; always use the actual generated solution filename in commands.
@@ -49,6 +49,11 @@ This file stores persistent instruction preferences for reuse across workspaces.
 - Bash is the default for helper scripts and tools (e.g., coverage reports, automation). Use bash unless there's a specific reason to use PowerShell (Windows-only requirement, repo convention, etc.).
 - When running dotnet test in a multi-project solution, always specify the test project path explicitly to avoid MSB1008 "Only one project can be specified" error.
 - Top-level statement programs generate a synthetic Main$ method that shows up in coverage with 0% and a high CRAP score. Exclude it via runsettings Exclude tag with [AssemblyName]Program under XPlat Code Coverage configuration.
+- When writing to memory files, never include backtick-wrapped code containing angle brackets or special characters (e.g., angle-bracket identifiers). Describe them in plain prose instead to avoid memory file corruption.
+- After every memory write (str_replace or create), immediately verify with memory view to catch corruption before the session ends.
+- Prefer assigning return values to a named variable before returning rather than inlining the expression in the return statement. Aids readability and debuggability.
+- Comment code clearly for maintainability without over-commenting.
+- Place comments on a separate line above the code they describe, not inline at the end of the line.
 
 ## Memory Log
 
@@ -96,3 +101,12 @@ Changes:
 - Add rule: bash is the default for helper scripts; only use PowerShell when there is a specific reason.
 - Add rule: always specify test project path in dotnet test to avoid MSB1008 in multi-project solutions.
 - Add rule: exclude top-level statement Program from coverage via runsettings to suppress synthetic Main$ CRAP score.
+
+### 2026-05-06 (session 3)
+
+Reason: Prevent recurrence of memory file corruption caused by special characters in str_replace content.
+
+Changes:
+
+- Add rule: never use backtick-wrapped code containing angle brackets or special characters in memory files; use plain prose instead.
+- Add rule: after every memory write, immediately verify with memory view to catch corruption before the session ends.
